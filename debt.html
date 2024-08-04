@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/debt.css">
+    <title>Credit Card Debts</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="mainpage.html" class="main">Bz Bee Finance</a>
+        <div class="services">
+            <button class="dropbtn">Services 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="services-content">
+                <a href="monthlybudget.html">Set Monthly Budgets</a>
+                <a href="debt.html">Show debts</a>
+                <a href="rewardpage.html">Reward Page</a>
+                <a href="additional.html">Additional Resources</a>
+              </div>
+        </div> 
+        <a href="index.html" class="logout">Log Out</a>
+    </div>
+    <div class="container">
+        <h1>Your Credit Card Debts</h1>
+        <label for="cardSelect">Select a Credit Card:</label>
+        <select id="cardSelect" onchange="updateDebts()">
+            <!-- Options will be dynamically inserted -->
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Loan Type</th>
+                    <th>Loan Details</th>
+                    <th>Amount (USD)</th>
+                </tr>
+            </thead>
+            <tbody id="debtTable">
+                <!-- Debt data will be inserted here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="total">Total Debt</td>
+                    <td id="totalDebt" class="total"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        // Simulated user card data from sign-up
+        const userCardData = [
+            { number: "**** **** **** 1234", name: "John Doe", bank: "DBS", debts: [{ type: "Housing Loan", details: "Mortgage", amount: 1200.50 }] },
+            { number: "**** **** **** 5678", name: "John Doe", bank: "UOB", debts: [{ type: "Car Loan", details: "Toyota Loan", amount: 5000.00 }] }
+        ];
+
+        const cardSelect = document.getElementById("cardSelect");
+        const debtTable = document.getElementById("debtTable");
+        const totalDebt = document.getElementById("totalDebt");
+
+        function populateCardOptions() {
+            userCardData.forEach(card => {
+                const option = document.createElement("option");
+                option.value = card.number;
+                option.textContent = `${card.number} (${card.bank})`;
+                cardSelect.appendChild(option);
+            });
+        }
+
+        function updateDebts() {
+            const selectedCardNumber = cardSelect.value;
+            const selectedCard = userCardData.find(card => card.number === selectedCardNumber);
+
+            // Clear the current table data
+            debtTable.innerHTML = "";
+            totalDebt.textContent = "";
+
+            if (selectedCard) {
+                let total = 0;
+
+                // Populate the table with the new data
+                selectedCard.debts.forEach(debt => {
+                    total += debt.amount;
+                    const row = `
+                        <tr>
+                            <td>${debt.type}</td>
+                            <td>${debt.details}</td>
+                            <td>$${debt.amount.toFixed(2)}</td>
+                        </tr>
+                    `;
+                    debtTable.insertAdjacentHTML('beforeend', row);
+                });
+
+                // Display the total debt
+                totalDebt.textContent = `$${total.toFixed(2)}`;
+            }
+        }
+
+        // Initial load
+        populateCardOptions();
+        updateDebts();
+    </script>
+</body>
+</html>
+

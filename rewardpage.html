@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reward Page - Bz Bee Finance</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/style/navbar.css">
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        flex-grow: 1;
+    }
+
+    .rewards-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+        box-sizing: border-box;
+    }
+
+    .reward-item {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .reward-item p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .reward-item button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .reward-item button:hover {
+        background-color: #45a049;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="mainpage.html" class="main">Bz Bee Finance</a>
+        <div class="services">
+            <button class="dropbtn">Services 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="services-content">
+                <a href="monthlybudget.html">Set Monthly Budgets</a>
+                <a href="debt.html">Show debts</a>
+                <a href="rewardpage.html">Reward Page</a>
+                <a href="additional.html">Additional Resources</a>
+            </div>
+        </div> 
+        <a href="index.html" class="logout">Log Out</a>
+    </div>
+
+<div class="content">
+    <h1>Your Rewards</h1>
+    <div class="rewards-container">
+        <div class="reward-item">
+            <p>One month free Subscription to website hosting and design services</p>
+            <button onclick="claimReward('One month free Subscription to website hosting and design services')">Claim</button>
+        </div>
+        <div class="reward-item">
+            <p>Free training and Cert courses</p>
+            <button onclick="claimReward('Free training and Cert courses')">Claim</button>
+        </div>
+        <div class="reward-item">
+            <p>10% off for Office Supplies</p>
+            <button onclick="claimReward('10% off for Office Supplies')">Claim</button>
+        </div>
+        <div class="reward-item">
+            <p>Free Networking Event Pass</p>
+            <button onclick="claimReward('Free Networking Event Pass')">Claim</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Bz Bee Finance</p>
+</footer>
+
+<script>
+    function claimReward(reward) {
+        alert('You have claimed: ' + reward);
+        // Here you can add additional logic to handle the reward claim, such as updating the database
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/style/mainpage.css">
+<title>Bz Bee Finance</title>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="mainpage.html" class="main">Bz Bee Finance</a>
+    <div class="services">
+        <button class="dropbtn">Services 
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="services-content">
+            <a href="monthlybudget.html">Set Monthly Budgets</a>
+            <a href="debt.html">Show debts</a>
+            <a href="rewardpage.html">Reward Page</a>
+            <a href="statistics.html">View statistics</a>
+            <a href="additional.html">Additional Resources</a>
+        </div>
+    </div> 
+    <a href="index.html" class="logout">Log Out</a>
+</div>
+
+<div class="main-content">
+  <div class="text-content">
+      <h1>Welcome to Bz Bee Finance</h1>
+      <h2>Now that you are logged in with us, enjoy the services we provide!</h2>
+      <p>We are a dedicated team focused on helping small business owners manage their finances effectively and avoid debt. Our website provides personalized budgeting tools and real-time spending monitoring across all linked accounts. Users can set monthly budgets, receive alerts when nearing spending limits, and earn rewards for staying within budget and achieving financial goals. Our goal is to simplify financial management and support small business success.</p>
+      <p>Hover over the "Services" link to see the dropdown menu.</p>
+  </div>
+
+  <section class="reward-section">
+      <div id="reward-timeline" class="box">Reward timeline content</div>
+      <div id="reward-calendar" class="box">
+        <div id='calendar'></div>
+      </div>
+  </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Bz Bee Finance</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Hardcoded data for demonstration purposes
+    const transactions = [
+        { date: '2024-07-01', description: 'Office Rent', amount: -1500 },
+        { date: '2024-07-05', description: 'Client Payment', amount: 5000 },
+        { date: '2024-07-10', description: 'Utilities', amount: -300 },
+        { date: '2024-07-15', description: 'Staff Salaries', amount: -3000 },
+        { date: '2024-07-20', description: 'Office Supplies', amount: -200 },
+        { date: '2024-07-25', description: 'Project Income', amount: 4500 }
+    ];
+
+    // Display transactions
+    const transactionsContainer = document.createElement('div');
+    transactionsContainer.className = 'transactions-container';
+    transactionsContainer.innerHTML = `<h3>Recent Transactions</h3>`;
+    transactions.forEach(tx => {
+        const txElement = document.createElement('div');
+        txElement.className = 'transaction';
+        txElement.innerHTML = `<strong>${tx.date}:</strong> ${tx.description} <span>${tx.amount > 0 ? '+' : ''}${tx.amount}</span>`;
+        transactionsContainer.appendChild(txElement);
+    });
+
+    document.querySelector('.main-content').appendChild(transactionsContainer);
+});
+</script>
+
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a, .navbar .dropbtn {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar .main {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.services {
+    float: left;
+    overflow: hidden;
+}
+
+.services-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.services-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.services-content a:hover {
+    background-color: #ddd;
+}
+
+.services:hover .services-content {
+    display: block;
+}
+
+.navbar a:hover, .services:hover .dropbtn {
+    background-color: #575757;
+    color: white;
+}
+
+.navbar .logout {
+    float: right;
+}
+
+.main-content {
+    padding: 40px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.text-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.text-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.text-content p {
+    margin: 20px 0;
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.reward-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.transactions-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transactions-container h3 {
+    margin-bottom: 20px;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.transaction span {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+
+</body>
+</html>

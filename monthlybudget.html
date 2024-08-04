@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Monthly Budget - Open Banking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/budget.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="mainpage.html" class="main">Bz Bee Finance</a>
+        <div class="services">
+            <button class="dropbtn">Services 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="services-content">
+                <a href="monthlybudget.html">Set Monthly Budgets</a>
+                <a href="debt.html">Show debts</a>
+                <a href="rewardpage.html">Reward Page</a>
+                <a href="additional.html">Additional Resources</a>
+            </div>
+        </div> 
+        <a href="index.html" class="logout">Log Out</a>
+    </div>
+    
+    <main class="container">
+        <h1>Set Your Monthly Budget</h1>
+        <form action="/submit-budget" method="post" class="budget-form">
+            <div class="form-group">
+                <label for="month">Month:</label>
+                <input type="month" id="month" name="month" required>
+            </div>
+            <div class="form-group">
+                <label for="income">Total Monthly Income:</label>
+                <input type="number" id="income" name="income" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="resources">Resources:</label>
+                <input type="number" id="resources" name="resources" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="utilities">Utilities:</label>
+                <input type="number" id="utilities" name="utilities" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="rent">Rent:</label>
+                <input type="number" id="rent" name="rent" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="savings">Savings:</label>
+                <input type="number" id="savings" name="savings" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="other">Other Expenses:</label>
+                <input type="number" id="other" name="other" step="0.01">
+            </div>
+            <button type="submit" class="btn-submit">Save Budget</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Open Banking</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/style/navbar.css">
+<link rel="stylesheet" href="/style/signup.css">
+
+<script>
+    function redirect() {
+        window.location.href = 'mainpage.html'; // Replace with your target URL
+    }
+</script>
+
+</head>
+<title>Bz Bee Finance</title>
+<body> 
+<div class="navbar">
+  <a href="index.html" class="main">Bz Bee Finance</a>
+</div>
+
+
+    <div class="signup-container">
+        <h1>Create an account with us to start your journey.</h1>
+        <p> Before you proceed, please ensure that you have a registered account with ACRA.</p>
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobilenm">Mobile Number:</label>
+                <input type="number" id="mobilenm" name="mobilenm" required>
+            </div>
+            <div class="form-group">
+                <label for="idnm">Identifiction Number:</label>
+                <input type="text" id="idnm" name="idnm" required>
+            </div>
+            <div class="form-group">
+                <label for="password"> Create Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Re-enter Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <p> Enter all bank accounts linked to your business.</p>
+            <div class="form-group">
+                <label for="cardname">Cardholder's Name:</label>
+                <input type="text" id="cardname" name="cardname" required>
+            </div>
+            <div class="form-group">
+                <label for="bankname">Bank Name:</label>
+                <select id="bankname" name="bankname" required>
+                    <option value="bank1">Development Bank of Singapore (DBS)</option>
+                    <option value="bank2">United Overseas Bank (UOB)</option>
+                    <option value="bank3">Standard Chartered Bank</option>
+                    <option value="bank4">Oversea-Chinese Banking Corporation (OCBC)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cardnum">Card Number:</label>
+                <input type="number" id="cardnum" name="cardnum" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-month">Expiry Month:</label>
+                <input type="month" id="expiry-month" name="expiry-month" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="expiry-year">Expiry Year:</label>
+                <select id="expiry-year" name="expiry-year" required>
+                    <option value="">Select Year</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="number" id="cvv" name="cvv" required>
+            </div>
+            <p>To add more card <a href="" class="button">click here</a></p>
+            <button type="button" onclick="redirect()">Submit</button>
+        </form>
+         
+    </div>
+</body>
+</html>
