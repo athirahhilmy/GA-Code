@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spending Trends - Bz Bee Finance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ece1e8;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .chart {
+            width: 80%;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .chart div {
+            height: 30px;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .bar {
+            height: 100%;
+            display: inline-block;
+        }
+        .label {
+            flex: 1;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showData() {
+            var selection = document.getElementById("cardSelect").value;
+            var dbsData = document.getElementById("dbsData");
+            var uobData = document.getElementById("uobData");
+
+            if (selection === "dbs") {
+                dbsData.classList.remove("hidden");
+                uobData.classList.add("hidden");
+            } else if (selection === "uob") {
+                dbsData.classList.add("hidden");
+                uobData.classList.remove("hidden");
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="navbar">
+    <a href="mainpage.html" class="main">Bz Bee Finance</a>
+    <div class="services">
+        <button class="dropbtn">Services 
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="services-content">
+            <a href="monthlybudget.html">Set Monthly Budgets</a>
+            <a href="debt.html">Show debts</a>
+            <a href="rewardpage.html">Reward Page</a>
+            <a href="additional.html">Additional Resources</a>
+            <a href="data.html">Spending Trends</a>
+        </div>
+    </div> 
+    <a href="index.html" class="logout">Log Out</a>
+</div>
+
+<div class="chart-container">
+    <label for="cardSelect">Select Card:</label>
+    <select id="cardSelect" onchange="showData()">
+        <option value="dbs">**** **** **** 1234 (DBS)</option>
+        <option value="uob">**** **** **** 5678 (UOB)</option>
+    </select>
+
+    <div id="dbsData" class="chart">
+        <h2>DBS Monthly Spending</h2>
+        <div>
+            <div class="label">January</div>
+            <div class="bar" style="width: 50%; background-color: #af4c8e;"></div>
+            <div>$500</div>
+        </div>
+        <div>
+            <div class="label">February</div>
+            <div class="bar" style="width: 60%; background-color: #af4c8e;"></div>
+            <div>$600</div>
+        </div>
+        <div>
+            <div class="label">March</div>
+            <div class="bar" style="width: 40%; background-color: #af4c8e;"></div>
+            <div>$400</div>
+        </div>
+        <div>
+            <div class="label">April</div>
+            <div class="bar" style="width: 70%; background-color: #af4c8e;"></div>
+            <div>$700</div>
+        </div>
+        <div>
+            <div class="label">May</div>
+            <div class="bar" style="width: 80%; background-color: #af4c8e;"></div>
+            <div>$800</div>
+        </div>
+    </div>
+
+    <div id="uobData" class="chart hidden">
+        <h2>UOB Monthly Spending</h2>
+        <div>
+            <div class="label">January</div>
+            <div class="bar" style="width: 40%; background-color: #e67799;"></div>
+            <div>$400</div>
+        </div>
+        <div>
+            <div class="label">February</div>
+            <div class="bar" style="width: 50%; background-color: #e67799;"></div>
+            <div>$500</div>
+        </div>
+        <div>
+            <div class="label">March</div>
+            <div class="bar" style="width: 30%; background-color: #e67799;"></div>
+            <div>$300</div>
+        </div>
+        <div>
+            <div class="label">April</div>
+            <div class="bar" style="width: 60%; background-color: #e67799;"></div>
+            <div>$600</div>
+        </div>
+        <div>
+            <div class="label">May</div>
+            <div class="bar" style="width: 70%; background-color: #e67799;"></div>
+            <div>$700</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
