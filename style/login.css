@@ -1,4 +1,7 @@
 
+.body{
+  background-color: blue;
+}
 .login-container {
   display: flex;
   justify-content: center; /* Center horizontally */
